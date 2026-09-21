@@ -1,8 +1,6 @@
 # AI Learning Assistant (MERN)
 
-Full-stack AI-powered study assistant with chat, document understanding, flashcards, quizzes, and progress tracking. Inspired by the YouTube build video: [Build a Full-Stack AI-Powered Learning Assistant App | MERN, React, Node.js, MongoDB, Express](https://www.youtube.com/watch?v=iaAdWmAu0TE&t=107s).
-
-## Demo video
+Full-stack AI-powered study assistant with chat, document understanding, flashcards, quizzes, and progress tracking. Inspired by the YouTube build video: [Build a Full-Stack AI-Powered Learning Assistant App | MERN, React, Node.js, MongoDB, Express]
 
 
 https://github.com/user-attachments/assets/e14c4639-48e2-499e-b468-2f37b5465551
