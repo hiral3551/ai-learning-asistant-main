@@ -49,10 +49,18 @@ const DocumentDetailPage = () => {
     const filePath = document.data.filepath;
     
     if (filePath.startsWith('http://') || filePath.startsWith('https://')) {
+      try {
+        const parsedUrl = new URL(filePath);
+        if (parsedUrl.hostname === 'localhost' || parsedUrl.hostname === '127.0.0.1') {
+          return `${BASE_URL.replace(/\/$/, '')}${parsedUrl.pathname}${parsedUrl.search}`;
+        }
+      } catch {
+        return null;
+      }
       return filePath;
     }
 
-    const fullUrl = `${BASE_URL}/${filePath.startsWith('/') ? filePath.slice(1) : filePath}`;
+    const fullUrl = `${BASE_URL.replace(/\/$/, '')}/${filePath.startsWith('/') ? filePath.slice(1) : filePath}`;
     return fullUrl;
   };
 

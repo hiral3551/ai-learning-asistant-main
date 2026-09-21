@@ -24,8 +24,8 @@ export const uploadDocument = async (req, res, next) => {
         return res.status(400).json({ success: false, error: 'Title is required', statusCode: 400 });
        }
 
-       // construct document data
-       const baseUrl=`http://localhost:${process.env.PORT || 8000}`;
+    // Use the public backend URL in production; derive it locally when unset.
+    const baseUrl = (process.env.PUBLIC_API_URL || `${req.protocol}://${req.get('host')}`).replace(/\/$/, '');
        const fileUrl=`${baseUrl}/uploads/documents/${req.file.filename}`;
 
        // create document record 
